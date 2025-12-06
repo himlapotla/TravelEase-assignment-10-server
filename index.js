@@ -63,62 +63,62 @@ async function run() {
             res.send(result)
         })
 
-//         app.get('/show-all-my-vehicles', async (req, res) => {
-//             const email = req.query.email
-//             if (email) {
-//                 query = { userEmail: email }
-//             }
+        app.get('/show-all-my-vehicles', async (req, res) => {
+            const email = req.query.email
+            if (email) {
+                query = { userEmail: email }
+            }
 
-//             const cursor = vehiclesCollection.find(query)
-//             const result = await cursor.toArray()
-//             res.send(result)
-//         })
+            const cursor = vehiclesCollection.find(query)
+            const result = await cursor.toArray()
+            res.send(result)
+        })
 
-//         app.get('/show-all-vehicles-six', async (req, res) => {
-//             const cursor = vehiclesCollection.find().sort({ createdAt: -1 }).limit(6)
-//             const result = await cursor.toArray()
-//             res.send(result)
-//         })
+        app.get('/show-all-vehicles-six', async (req, res) => {
+            const cursor = vehiclesCollection.find().sort({ createdAt: -1 }).limit(6)
+            const result = await cursor.toArray()
+            res.send(result)
+        })
 
-//         app.post('/post-vehicles', async (req, res) => {
-//             const newVehicles = req.body
-//             newVehicles.createdAt = new Date().toISOString()
-//             const result = await vehiclesCollection.insertOne(newVehicles)
-//             res.send(result)
-//         })
+        app.post('/post-vehicles', async (req, res) => {
+            const newVehicles = req.body
+            newVehicles.createdAt = new Date().toISOString()
+            const result = await vehiclesCollection.insertOne(newVehicles)
+            res.send(result)
+        })
 
-//         app.patch('/vehicles-update/:id', async (req, res) => {
-//             const id = req.params.id
+        app.patch('/vehicles-update/:id', async (req, res) => {
+            const id = req.params.id
 
-//             const updateVeh = req.body
-//             const query = { _id: new ObjectId(id) }
-//             const update = {
-//                 $set: updateVeh
-//             }
-//             const result = await vehiclesCollection.updateOne(query, update)
-//             res.send(result)
-//         })
+            const updateVeh = req.body
+            const query = { _id: new ObjectId(id) }
+            const update = {
+                $set: updateVeh
+            }
+            const result = await vehiclesCollection.updateOne(query, update)
+            res.send(result)
+        })
 
-//         app.delete('/delete/:id', async(req, res) => {
-//             const id = req.params.id
-//             const query = {_id: new ObjectId(id)}
-//             const result = await vehiclesCollection.deleteOne(query)
-//             res.send(result)
-//         })
+        app.delete('/delete/:id', async(req, res) => {
+            const id = req.params.id
+            const query = {_id: new ObjectId(id)}
+            const result = await vehiclesCollection.deleteOne(query)
+            res.send(result)
+        })
 
-//         // await client.db("admin").command({ ping: 1 });
-//         // console.log("Pinged your deployment. You successfully connected to MongoDB !!!");
-//     }
-//     finally {
+        // await client.db("admin").command({ ping: 1 });
+        // console.log("Pinged your deployment. You successfully connected to MongoDB !!!");
+    }
+    finally {
 
-//     }
-// }
-// run().catch(console.dir);
+    }
+}
+run().catch(console.dir);
 
-// app.get('/', (req, res) => {
-//     res.send('Smart server is running...')
-// })
+app.get('/', (req, res) => {
+    res.send('Smart server is running...')
+})
 
-// app.listen(port, () => {
-//     console.log(`Smart server is running on port -- ${port}`)
-// })
+app.listen(port, () => {
+    console.log(`Smart server is running on port -- ${port}`)
+})
