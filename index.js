@@ -53,15 +53,15 @@ async function run() {
             res.send(result)
         })
 
-//         app.get('/vehicles/:id', async (req, res) => {
-//             const id = req.params.id
-//             console.log(id);
+        app.get('/vehicles/:id', async (req, res) => {
+            const id = req.params.id
+            console.log(id);
 
-//             const query = { _id: new ObjectId(id) }
-//             const cursor = vehiclesCollection.find(query)
-//             const result = await cursor.toArray()
-//             res.send(result)
-//         })
+            const query = { _id: new ObjectId(id) }
+            const cursor = vehiclesCollection.find(query)
+            const result = await cursor.toArray()
+            res.send(result)
+        })
 
 //         app.get('/show-all-my-vehicles', async (req, res) => {
 //             const email = req.query.email
