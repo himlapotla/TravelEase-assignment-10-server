@@ -46,12 +46,12 @@ async function run() {
         
 
 
-//         // vehicles from here............................................
-//         app.get('/show-all-vehicles', async (req, res) => {
-//             const cursor = vehiclesCollection.find()
-//             const result = await cursor.toArray()
-//             res.send(result)
-//         })
+        // vehicles from here............................................
+        app.get('/show-all-vehicles', async (req, res) => {
+            const cursor = vehiclesCollection.find()
+            const result = await cursor.toArray()
+            res.send(result)
+        })
 
 //         app.get('/vehicles/:id', async (req, res) => {
 //             const id = req.params.id
