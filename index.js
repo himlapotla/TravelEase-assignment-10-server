@@ -18,20 +18,20 @@ const client = new MongoClient(uri, {
     }
 })
 
-// async function run() {
-//     try {
-//         // await client.connect();
+async function run() {
+    try {
+        // await client.connect();
 
-//         const db = client.db('travel-ease')
-//         const vehiclesCollection = db.collection('vehicles')
-//         const bookCollection = db.collection('bookVehicles')
+        const db = client.db('travel-ease')
+        const vehiclesCollection = db.collection('vehicles')
+        const bookCollection = db.collection('bookVehicles')
 
-//         // book from here........................................
-//         app.post('/post-book', async (req, res) => {
-//             const newBook = req.body
-//             const result = await bookCollection.insertOne(newBook)
-//             res.send(result)
-//         })
+        // book from here........................................
+        app.post('/post-book', async (req, res) => {
+            const newBook = req.body
+            const result = await bookCollection.insertOne(newBook)
+            res.send(result)
+        })
 
 //         app.get('/show-all-my-book', async (req, res) => {
 //             const email = req.query.email
