@@ -4,19 +4,19 @@ const cors = require('cors')
 const app = express()
 const port = process.env.PORT || 3000
 
-// app.use(cors())
-// app.use(express.json())
+app.use(cors())
+app.use(express.json())
 
-// const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-// const uri = process.env.MONGO_URI;
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
+const uri = process.env.MONGO_URI;
 
-// const client = new MongoClient(uri, {
-//     serverApi: {
-//         version: ServerApiVersion.v1,
-//         strict: true,
-//         deprecationErrors: true,
-//     }
-// })
+const client = new MongoClient(uri, {
+    serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
+    }
+})
 
 // async function run() {
 //     try {
