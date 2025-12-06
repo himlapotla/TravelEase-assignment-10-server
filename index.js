@@ -33,16 +33,16 @@ async function run() {
             res.send(result)
         })
 
-//         app.get('/show-all-my-book', async (req, res) => {
-//             const email = req.query.email
-//             if (email) {
-//                 query = { userEmail: email }
-//             }
+        app.get('/show-all-my-book', async (req, res) => {
+            const email = req.query.email
+            if (email) {
+                query = { userEmail: email }
+            }
 
-//             const cursor = bookCollection.find(query)
-//             const result = await cursor.toArray()
-//             res.send(result)
-//         })
+            const cursor = bookCollection.find(query)
+            const result = await cursor.toArray()
+            res.send(result)
+        })
         
 
 
